@@ -1,3 +1,10 @@
+
+//STORE nilaiTengah with zero
+//CALCULATE nilaiTengah = panjang arr dibagi 2 yang sudah dibulatkan 
+//  IF panjang arr mod 2 bernilai genap, maka nilaiMedia = posisi nilaiTengah ditambah dengan posisi nilaiTengah selanjutnya, lalu di bagi 2
+//  IF panjang arr mod 2 bernilai ganjil, maka nilaiMedian = posisi nilaiTengah
+//SHOW nilaiMedian
+
 function cariMedian(arr) {
     // you can only write your code here!
     var hasil = 0;
@@ -5,12 +12,15 @@ function cariMedian(arr) {
     var panjangArray = arr.length;
     var nilaitengah = Math.round(panjangArray/2)-1
     //console.log(panjangArray%2)
-    //console.log(tengah)
+    //console.log(panjangArray + " panjangArray")
+    //console.log(nilaitengah + " nilaitengah")
     if (panjangArray % 2 === 0){
       nilaiMedian = ((arr[nilaitengah]) + (arr[nilaitengah+1]))/2;
-      //console.log(arr[panjangArray/2] +""+ arr[panjangArray/2-1])
+      //console.log((arr[nilaitengah]) + " + " + (arr[nilaitengah+1]) + " / 2 " )
+      //console.log(arr[panjangArray/2] +" didalam if "+ arr[panjangArray/2-1])
     }
     if (panjangArray % 2 === 1){ 
+      //console.log (panjangArray + " % 2")
       nilaiMedian = arr[nilaitengah];
     }
    return nilaiMedian
