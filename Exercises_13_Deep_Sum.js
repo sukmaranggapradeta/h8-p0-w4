@@ -9,6 +9,9 @@ function deepSum (arr) {
             }
         }
     }
+    if (count === 0){
+      return "No number"
+    }
     return count
 }
 
