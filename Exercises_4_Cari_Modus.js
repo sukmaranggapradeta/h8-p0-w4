@@ -33,13 +33,34 @@ function cariModus(arr) {
     modus += output[i][1]
     //console.log(output[i][1])
   } 
-  //console.log(modus)
-    if ((modus % output.length) === 0){
-      //console.log(modus +" ini modus")
-      //console.log(output.length + " ini length")
-      return output = -1
+  //console.log(nilaiMaks + " ******** ini nilai Maks")
+  //console.log(modus + " ********* ini modus")
+
+  //kondisi jika angkanya sama semua
+  var count = 0
+  for (var z = 0 ; z < arr.length ; z++){
+    //console.log(arr[z] + " " + arr[0])
+    if (arr[z] === arr[0]){
+      count++
     }
-    //console.log(nilaiMaks[0])
+  }
+    //console.log(count + " === " + arr.length)
+    if (count === arr.length){
+      return output = -1;
+    }
+
+  //kondisi jika jumlah munculnya sama 
+  var countJumlahMunculnya = 0
+    for (var a = 0 ; a < output.length ; a++){
+      if (output[a][1] === output[0][1]){
+        countJumlahMunculnya++
+      }
+    }
+    //console.log(countJumlahMunculnya + " ==== " + output.length )
+    if (countJumlahMunculnya === output.length){
+      return output = -1;
+    }
+
   return nilaiMaks[0]
 }
 
