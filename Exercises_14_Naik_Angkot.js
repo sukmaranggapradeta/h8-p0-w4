@@ -21,15 +21,19 @@ function naikAngkot(arrPenumpang) {
     for (var j = 0 ; j < arrPenumpang.length ; j++){
         var bayar = 0
         for (var i = 0 ; i < rute.length ; i++){
-            if (rute[i] === arrPenumpang[j][1]){
+            if (rute[i].toUpperCase() === arrPenumpang[j][1].toUpperCase()){
                 //console.log("posisi 1 di " + i)
                 naikDari = i
-            }else if (rute[i] === arrPenumpang[j][2]) {
+            }else if (rute[i].toUpperCase() === arrPenumpang[j][2].toUpperCase()) {
                 //console.log("posisi 2 di " + i)
                 tujuan = i
             }
         }
-        bayar = (tujuan - naikDari) * 2000
+        if (tujuan > naikDari){
+            bayar = (tujuan - naikDari) * 2000
+        }else{
+            bayar = (naikDari - tujuan) * 2000
+        }
 
         var object = {}
         object.penumpang = arrPenumpang[j][0];
@@ -42,7 +46,7 @@ function naikAngkot(arrPenumpang) {
   }
   
   //TEST CASE
-  console.log(naikAngkot([['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]));
+  console.log(naikAngkot([['Dimitri', 'a', 'b'], ['Icha', 'c', 'a']]));
   // [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
   //   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
   
